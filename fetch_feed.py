@@ -101,10 +101,12 @@ def generate_html(entries: list[dict], output_path: Path) -> None:
         ".footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #999; border-top: 1px solid #eee;}\n"
         "</style></head><body>"
     )
-    # Header with new tagline informing visitors about weekly updates on Mondays
+    # Header with tagline describing the essence of the feed rather than the schedule
+    # We emphasise that all your marketing news is available in one place and avoid tying it to a specific day.
     parts.append("<div class='header'>")
     parts.append("<h1>Briefed.</h1>")
-    parts.append("<p>Your marketing scoop — updated every Monday at 09:00 Israel time</p>")
+    # Tagline: a concise description that stays consistent across days
+    parts.append("<p>Your marketing news in One place</p>")
     parts.append("</div>")
     # Entries
     parts.append("<div class='entries'>")
