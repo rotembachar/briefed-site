@@ -6,7 +6,7 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
   permissions:
-  c  ontents: write
+  contents: write
 
 jobs:
   build:
