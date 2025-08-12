@@ -2,8 +2,8 @@ name: Update Briefed Feed
 
 on:
   schedule:
-    # Runs every Monday at 08:00 UTC (adjust to preferred schedule)
-    - cron: '0 8 * * 1'
+    # Runs every Monday at 06:00 UTC, which corresponds to 09:00 in Israel (Asia/Jerusalem) during standard time. Adjust if daylight savings changes.
+    - cron: '0 6 * * 1'
   workflow_dispatch: {}
 
 jobs:
