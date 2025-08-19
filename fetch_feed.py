@@ -5,9 +5,9 @@ extracts relevant fields, and builds an HTML file for the Briefed. website.
 The output HTML file is written to ``index.html`` in the same directory.
 
 Sources used:
-  - HubSpot Marketing Blog RSS feed
-  - Marketing Dive News RSS feed【535150834247052†L281-L289】
-  - Social Media Today News RSS feed
+- Marketing Dive News RSS feed
+- Adweek Technology RSS feed
+- Social Media Today News RSS feed
 
 This script does not rely on paid APIs and uses a simple summarization method
 to create a two-sentence summary of each article. It is intended for a weekly
@@ -25,9 +25,10 @@ from pathlib import Path
 
 
 FEEDS = {
-    "HubSpot": "https://blog.hubspot.com/marketing/rss.xml",
-    "Marketing Dive": "https://www.marketingdive.com/feeds/news",
-    "Social Media Today": "https://www.socialmediatoday.com/feeds/news",
+    "Marketing Dive": "https://www.marketingdive.com/feeds/news/",
+    "Adweek Technology": "https://www.adweek.com/category/technology/feed/",
+    "Social Media Today": "https://www.socialmediatoday.com/feeds/news/",
+
 }
 
 
