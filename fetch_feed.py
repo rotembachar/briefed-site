@@ -8,6 +8,7 @@ Sources used:
 - Marketing Dive News RSS feed
 - Adweek Technology RSS feed
 - Social Media Today News RSS feed
+- Digiday RSS feed
 
 This script does not rely on paid APIs and uses a simple summarization method
 to create a two-sentence summary of each article. It is intended for a weekly
@@ -28,6 +29,7 @@ FEEDS = {
     "Marketing Dive": "https://www.marketingdive.com/feeds/news/",
     "Adweek Technology": "https://www.adweek.com/category/technology/feed/",
     "Social Media Today": "https://www.socialmediatoday.com/feeds/news/",
+    "Digiday": "https://digiday.com/feed/",
 
 }
 
