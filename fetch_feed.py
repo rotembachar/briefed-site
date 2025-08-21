@@ -85,25 +85,25 @@ def generate_html(entries: list[dict], output_path: Path) -> None:
     parts.append(
         "<link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'>"
     )
+    # Updated styles with Mobileye colors
     parts.append(
         "<style>\n"
-        "body {font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #333; margin: 0;}\n"
-        ".header {background: linear-gradient(90deg, #ff8a65, #ffa726); padding: 25px 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10;}\n"
+        "body {font-family: 'Poppins', sans-serif; background-color: #f8f9fc; color: #333; margin: 0;}\n"
+        ".header {background: linear-gradient(90deg, #1f2eb8, #525cff); padding: 25px 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10;}\n"
         ".header h1 {margin: 0; font-size: 2.4em; font-weight: 600; color: #fff;}\n"
         ".header p {margin: 4px 0 0; font-size: 0.95em; color: #ffe0b2;}\n"
         ".entries {max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;}\n"
         ".card {background-color: #ffffff; border-radius: 10px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s;}\n"
         ".card:hover {transform: translateY(-4px);}\n"
-        ".card .source {color: #ff7043; font-size: 0.75em; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;}\n"
+        ".card .source {color: #525cff; font-size: 0.75em; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;}\n"
         ".card .date {color: #757575; font-size: 0.8em; margin-top: 6px;}\n"
-        ".card a {color: #2e7d32; text-decoration: none; font-size: 1.2em; font-weight: 600; line-height: 1.3;}\n"
-        ".card a:hover {text-decoration: underline;}\n"
+        ".card a {color: #1f2eb8; text-decoration: none; font-size: 1.2em; font-weight: 600; line-height: 1.3;}\n"
+        ".card a:hover {color: #525cff; text-decoration: underline;}\n"
         ".card .summary {margin-top: 12px; color: #555; font-size: 0.9em; line-height: 1.45;}\n"
-        ".footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #999; border-top: 1px solid #eee;}\n"
+        ".footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #1f2eb8; border-top: 1px solid #eee;}\n"
         "</style></head><body>"
     )
     # Header with tagline describing the essence of the feed rather than the schedule
-    # We emphasise that all your marketing news is available in one place and avoid tying it to a specific day.
     parts.append("<div class='header'>")
     parts.append("<h1>Briefed.</h1>")
     # Tagline: a concise description that stays consistent across days
@@ -123,9 +123,14 @@ def generate_html(entries: list[dict], output_path: Path) -> None:
         parts.append(f"<div class='summary'>{entry['summary']}</div>")
         parts.append("</div>")
     parts.append("</div>")  # close entries grid
-    parts.append("<div class='footer'>Updated automatically every week via GitHub Actions · Powered by free marketing sources</div>")
+    # Footer with credit
+    parts.append(
+        "<div class='footer'>Updated automatically every week via GitHub Actions · Powered by free marketing sources · "
+        "<span style='color:#1f2eb8;font-weight:600;'>Created by Rotem Bachar</span></div>"
+    )
     parts.append("</body></html>")
     output_path.write_text("\n".join(parts), encoding="utf-8")
+
 
 
 def main() -> None:
