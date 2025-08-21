@@ -1,25 +1,55 @@
 <html><head><meta charset='UTF-8'><title>Briefed. Feed</title>
 <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'>
 <style>
-body {font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #333; margin: 0;}
-.header {background: linear-gradient(90deg, #ff8a65, #ffa726); padding: 25px 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10;}
+body {font-family: 'Poppins', sans-serif; background-color: #f8f9fc; color: #333; margin: 0;}
+.header {background: linear-gradient(90deg, #1f2eb8, #525cff); padding: 25px 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10;}
 .header h1 {margin: 0; font-size: 2.4em; font-weight: 600; color: #fff;}
 .header p {margin: 4px 0 0; font-size: 0.95em; color: #ffe0b2;}
 .entries {max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;}
 .card {background-color: #ffffff; border-radius: 10px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s;}
 .card:hover {transform: translateY(-4px);}
-.card .source {color: #ff7043; font-size: 0.75em; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;}
+.card .source {color: #525cff; font-size: 0.75em; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;}
 .card .date {color: #757575; font-size: 0.8em; margin-top: 6px;}
-.card a {color: #2e7d32; text-decoration: none; font-size: 1.2em; font-weight: 600; line-height: 1.3;}
-.card a:hover {text-decoration: underline;}
+.card a {color: #1f2eb8; text-decoration: none; font-size: 1.2em; font-weight: 600; line-height: 1.3;}
+.card a:hover {color: #525cff; text-decoration: underline;}
 .card .summary {margin-top: 12px; color: #555; font-size: 0.9em; line-height: 1.45;}
-.footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #999; border-top: 1px solid #eee;}
+.footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #1f2eb8; border-top: 1px solid #eee;}
 </style></head><body>
 <div class='header'>
 <h1>Briefed.</h1>
 <p>Your marketing news in One place</p>
 </div>
 <div class='entries'>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/media/dave-bernath-to-succeed-ron-gutman-wurl-ceo-applovin-ctv/' target='_blank' rel='noopener noreferrer'>Dave Bernath to Succeed Ron Gutman as CEO of AppLovin’s CTV Firm Wurl </a>
+<div class='date'>21 Aug 2025</div>
+<div class='summary'>The company’s CEO, Ron Gutman, is set to retire Thursday and will be succeeded by Dave Bernath effective immediately.</div>
+</div>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/commerce/advertisers-will-soon-be-able-to-buy-macys-media-network-through-amazon/' target='_blank' rel='noopener noreferrer'>EXCLUSIVE: Advertisers Will Soon Be Able to Buy Macy&#8217;s Media Network Through Amazon</a>
+<div class='date'>21 Aug 2025</div>
+<div class='summary'>The department store is the first major retailer to use Amazon's retail media tech.</div>
+</div>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/brand-marketing/rage-bait-ads-are-risky-so-why-do-brands-keep-making-them/' target='_blank' rel='noopener noreferrer'>Rage-Bait Ads Are Risky. So Why Do Brands Keep Making Them?</a>
+<div class='date'>21 Aug 2025</div>
+<div class='summary'>“Rage bait,” internet shorthand for content made to provoke and monetize fury, has dominated ad industry headlines recently. Intentionally or not, brands have gotten consumers all riled up over the [&hellip;]</div>
+</div>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/agencies/gravity-global-acquires-marketing-doctor-in-us-expansion-push/' target='_blank' rel='noopener noreferrer'>Gravity Global Acquires Marketing Doctor in U.S. Expansion Push</a>
+<div class='date'>21 Aug 2025</div>
+<div class='summary'>The London agency is bolstering its depth in media and its public sector reach</div>
+</div>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/tvspy/kctv-to-relight-its-broadcast-tower-after-more-than-20-years/' target='_blank' rel='noopener noreferrer'>KCTV to Relight Its Broadcast Tower After More than 20 Years</a>
+<div class='date'>20 Aug 2025</div>
+<div class='summary'>Since 1955, the 1,042-foot KCTV5 tower has been a familiar landmark in Kansas City.</div>
+</div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
 <a href='https://www.socialmediatoday.com/news/reddit-ad-performance-tips-infographic/758232/' target='_blank' rel='noopener noreferrer'>How to Drive Better Response with Reddit Ads [Infographic]</a>
@@ -33,22 +63,10 @@ body {font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #333
 <div class='summary'>Could TikTok actually get banned this time?</div>
 </div>
 <div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/tvnewser/week-of-august-11-2025-cable-news-ratings/' target='_blank' rel='noopener noreferrer'>Week of August 11 Cable News Ratings: Fox News and CNN Have Week-to-Week Growth</a>
-<div class='date'>20 Aug 2025</div>
-<div class='summary'>MSNBC saw growth in the Adults 25-54 demo during primetime.</div>
-</div>
-<div class='card'>
 <div class='source'>Social Media Today</div>
 <a href='https://www.socialmediatoday.com/news/youtube-machine-learning-clean-up-shorts-playback/758215/' target='_blank' rel='noopener noreferrer'>YouTube’s Using Machine Learning to Improve the Look of Your Shorts Clips</a>
 <div class='date'>20 Aug 2025</div>
 <div class='summary'>YouTube&#39;s looking to make Shorts look better in-stream.&nbsp;</div>
-</div>
-<div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/commerce/amazon-is-reportedly-switching-its-operating-system-to-android/' target='_blank' rel='noopener noreferrer'>Amazon Is Reportedly Switching Its Operating System to Android</a>
-<div class='date'>20 Aug 2025</div>
-<div class='summary'>Its Fire OS was known as a “forked” version of Android.</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
@@ -61,24 +79,6 @@ body {font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #333
 <a href='https://www.socialmediatoday.com/news/google-adds-ai-editing-tools-pixel-camera/758205/' target='_blank' rel='noopener noreferrer'>Google Adds Conversational AI Image Editing to Pixel Devices</a>
 <div class='date'>20 Aug 2025</div>
 <div class='summary'>Handy AI editing updates for Google&#39;s Pixel camera.</div>
-</div>
-<div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/brand-marketing/apples-new-ad-puts-parkinsons-patients-behind-the-camera/' target='_blank' rel='noopener noreferrer'>Apple’s New Ad Puts Parkinson’s Patients Behind the Camera</a>
-<div class='date'>20 Aug 2025</div>
-<div class='summary'>Apple is again putting the spotlight on the iPhone&#8217;s accessibility features in a new campaign. &#8220;No Frame Missed,&#8221; created by its dedicated agency TBWA\Media Arts Lab, highlights how iPhone&#8217;s Action [&hellip;]</div>
-</div>
-<div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/programmatic/as-ai-search-threatens-open-web-ad-supply-dsps-face-a-reckoning/' target='_blank' rel='noopener noreferrer'>As AI Search Threatens Open-Web Ad Supply, DSPs Face a Reckoning</a>
-<div class='date'>20 Aug 2025</div>
-<div class='summary'>The Trade Desk, Viant, and industry analysts say the “whole ecosystem is being upended."</div>
-</div>
-<div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/tvspy/hayley-spitler-joins-milwaukee-fox-station-as-breaking-news-anchor/' target='_blank' rel='noopener noreferrer'>Hayley Spitler Joins Milwaukee Fox Station as Breaking News Anchor</a>
-<div class='date'>20 Aug 2025</div>
-<div class='summary'>Spitler last worked at WHNS in Greenville, S.C. where she had been the Midday anchor since 2023.</div>
 </div>
 <div class='card'>
 <div class='source'>Marketing Dive</div>
@@ -111,5 +111,5 @@ body {font-family: 'Poppins', sans-serif; background-color: #f0f4f8; color: #333
 <div class='summary'>The software company is expanding its Real-Time CDP Collaboration offering to help brands connect with other brands around data.</div>
 </div>
 </div>
-<div class='footer'>Updated automatically every week via GitHub Actions · Powered by free marketing sources</div>
+<div class='footer'>Updated automatically every week via GitHub Actions · Powered by free marketing sources · <span style='color:#1f2eb8;font-weight:600;'>Created by Rotem Bachar</span></div>
 </body></html>
