@@ -1,115 +1,198 @@
 <html><head><meta charset='UTF-8'><title>Briefed. Feed</title>
 <link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'>
 <style>
-body {font-family: 'Poppins', sans-serif; background-color: #f8f9fc; color: #333; margin: 0;}
-.header {background: linear-gradient(90deg, #1f2eb8, #525cff); padding: 25px 40px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 10;}
-.header h1 {margin: 0; font-size: 2.4em; font-weight: 600; color: #fff;}
-.header p {margin: 4px 0 0; font-size: 0.95em; color: #ffe0b2;}
-.entries {max-width: 1100px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;}
-.card {background-color: #ffffff; border-radius: 10px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; height: 100%; transition: transform 0.2s;}
-.card:hover {transform: translateY(-4px);}
-.card .source {color: #525cff; font-size: 0.75em; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;}
-.card .date {color: #757575; font-size: 0.8em; margin-top: 6px;}
-.card a {color: #1f2eb8; text-decoration: none; font-size: 1.2em; font-weight: 600; line-height: 1.3;}
-.card a:hover {color: #525cff; text-decoration: underline;}
-.card .summary {margin-top: 12px; color: #555; font-size: 0.9em; line-height: 1.45;}
-.footer {background-color: #ffffff; text-align: center; padding: 20px; font-size: 0.8em; color: #1f2eb8; border-top: 1px solid #eee;}
+body {font-family: 'Poppins', sans-serif; background:#f8f9fc; margin:0;}
+.header {background:linear-gradient(90deg,#1f2eb8,#525cff); padding:20px 40px; color:#fff;}
+.header h1 {margin:0; font-size:2.2em; font-weight:600;}
+.header p {margin:4px 0 0; font-size:0.95em; color:#ffe0b2;}
+.section-header {display:flex; justify-content:center; align-items:center; gap:10px; margin:20px;}
+.section-header h2 {margin:0;}
+.entries {max-width:1100px; margin:20px auto; padding:0 20px; display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px;}
+.hidden {display:none;}
+.card {background:#fff; border-radius:10px; padding:20px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.card .source {color:#525cff; font-size:0.75em; text-transform:uppercase; margin-bottom:4px;}
+.card .date {color:#757575; font-size:0.8em; margin-top:6px;}
+.card a {color:#1f2eb8; text-decoration:none; font-size:1.1em; font-weight:600;}
+.card a:hover {text-decoration:underline;}
+.card .summary {margin-top:10px; font-size:0.9em; color:#444;}
+.footer {background:#fff; text-align:center; padding:15px; font-size:0.8em; color:#1f2eb8; border-top:1px solid #eee;}
+#switch-button {padding:5px 10px; font-size:1rem; border:1px solid #ccc; border-radius:6px; cursor:pointer;}
 </style></head><body>
-<div class='header'>
-<h1>Briefed.</h1>
-<p>Your marketing news in One place</p>
-</div>
-<div class='entries'>
+<div class='header'><h1>Briefed.</h1><p>Your marketing news in One place</p></div>
+<div class='section-header'><h2 id='feed-title'>Marketing Articles</h2><button id='switch-button'>→</button></div>
+<div id='entries-marketing' class='entries'>
 <div class='card'>
 <div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/tvnewser/wednesday-august-20-2025-evening-cable-news-ratings/' target='_blank' rel='noopener noreferrer'>Wednesday, August 20 Evening Cable News Ratings: CNN NewsNight Was the Network&#8217;s Top Show</a>
+<a href='https://www.adweek.com/creativity/weird-al-unlikely-spokesman-prudential-marketing-shift/' target='_blank'>Weird Al Is the Unlikely Spokesperson for Prudential&#8217;s Marketing Shift</a>
+<div class='date'>24 Aug 2025</div>
+<div class='summary'>Weird Al appears in the next chapter of Prudential’s brand platform, “Protect Your Life’s Work.”</div>
+</div>
+<div class='card'>
+<div class='source'>Adweek Technology</div>
+<a href='https://www.adweek.com/tvnewser/wednesday-august-20-2025-evening-cable-news-ratings/' target='_blank'>Wednesday, August 20 Evening Cable News Ratings: CNN NewsNight Was the Network&#8217;s Top Show</a>
 <div class='date'>23 Aug 2025</div>
 <div class='summary'>Fox News' The Five was the top show in total viewers, and Gutfeld! led the way in the demo.</div>
 </div>
 <div class='card'>
 <div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/tvnewser/tuesday-august-19-2025-evening-cable-news-ratings/' target='_blank' rel='noopener noreferrer'>Tuesday, August 19 Evening Cable News Ratings: 10 PM Hour Was Top in the Demo</a>
+<a href='https://www.adweek.com/tvnewser/tuesday-august-19-2025-evening-cable-news-ratings/' target='_blank'>Tuesday, August 19 Evening Cable News Ratings: 10 PM Hour Was Top in the Demo</a>
 <div class='date'>23 Aug 2025</div>
 <div class='summary'>CNN NewsNight and MSNBC's The Last Word led the way for their respective networks in the demo.</div>
 </div>
 <div class='card'>
 <div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/brand-marketing/appletv-hikes-monthly-subscription-price-by-30/' target='_blank' rel='noopener noreferrer'>AppleTV+ Hikes Monthly Subscription Price by 30%</a>
+<a href='https://www.adweek.com/brand-marketing/appletv-hikes-monthly-subscription-price-by-30/' target='_blank'>AppleTV+ Hikes Monthly Subscription Price by 30%</a>
 <div class='date'>22 Aug 2025</div>
 <div class='summary'>Get ready to pay more to watch Major League Soccer and Severance.</div>
 </div>
 <div class='card'>
 <div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/tvnewser/ticker-cnn-headlines-debuts-new-programming-schedule/' target='_blank' rel='noopener noreferrer'>Ticker: CNN Headlines Debuts New Programming Schedule</a>
+<a href='https://www.adweek.com/tvnewser/ticker-cnn-headlines-debuts-new-programming-schedule/' target='_blank'>Ticker: CNN Headlines Debuts New Programming Schedule</a>
 <div class='date'>22 Aug 2025</div>
 <div class='summary'>The FAST channel features live news and can't-miss moments.</div>
 </div>
 <div class='card'>
-<div class='source'>Adweek Technology</div>
-<a href='https://www.adweek.com/brand-marketing/cracker-barrel-cmo-defends-rebrand-after-stock-tumbles/' target='_blank' rel='noopener noreferrer'>Cracker Barrel CMO Defends Rebrand After Stock Tumbles</a>
-<div class='date'>22 Aug 2025</div>
-<div class='summary'>The restaurant chain's shares fell 7.2% on Thursday morning, two days after it unveiled its new logo.</div>
-</div>
-<div class='card'>
 <div class='source'>Marketing Dive</div>
-<a href='https://www.marketingdive.com/news/walmarts-booming-ad-business-provides-flexibility-amid-tariff-impact/758390/' target='_blank' rel='noopener noreferrer'>Walmart’s booming ad business provides ‘flexibility’ amid tariff impact</a>
+<a href='https://www.marketingdive.com/news/walmarts-booming-ad-business-provides-flexibility-amid-tariff-impact/758390/' target='_blank'>Walmart’s booming ad business provides ‘flexibility’ amid tariff impact</a>
 <div class='date'>22 Aug 2025</div>
 <div class='summary'>Continued momentum for retail media offerings like Connect is helping drive profits and will remain &ldquo;obviously key,&rdquo; executives said.</div>
 </div>
 <div class='card'>
 <div class='source'>Marketing Dive</div>
-<a href='https://www.marketingdive.com/news/how-experiences-turn-instore-retail-media-into-real-results/757601/' target='_blank' rel='noopener noreferrer'>How experiences turn in‑store retail media into real results</a>
+<a href='https://www.marketingdive.com/news/how-experiences-turn-instore-retail-media-into-real-results/757601/' target='_blank'>How experiences turn in‑store retail media into real results</a>
 <div class='date'>22 Aug 2025</div>
 <div class='summary'>Retail media needs to bridge the gap between physical and digital to create a cohesive media ecosystem, writes Sam&rsquo;s Club&rsquo;s Harvey Ma.</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
-<a href='https://www.socialmediatoday.com/news/meta-changes-ad-budgets-charges-for-campaigns/758359/' target='_blank' rel='noopener noreferrer'>Meta Rolls Out Changes to Its Ad Billing Settings</a>
+<a href='https://www.socialmediatoday.com/news/meta-changes-ad-budgets-charges-for-campaigns/758359/' target='_blank'>Meta Rolls Out Changes to Its Ad Billing Settings</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>Meta will now charge you at launch for your campaigns.</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
-<a href='https://www.socialmediatoday.com/news/x-formerly-twitter-guide-2025-nfl-season-engagement/758358/' target='_blank' rel='noopener noreferrer'>X Publishes Guide to NFL Engagement and Opportunities</a>
+<a href='https://www.socialmediatoday.com/news/x-formerly-twitter-guide-2025-nfl-season-engagement/758358/' target='_blank'>X Publishes Guide to NFL Engagement and Opportunities</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>New insights to help you plan for the upcoming NFL season.&nbsp;</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
-<a href='https://www.socialmediatoday.com/news/tiktok-joins-international-trademark-association-education-program/758357/' target='_blank' rel='noopener noreferrer'>TikTok Joins INTA Counterfeit Goods Education Initiative</a>
+<a href='https://www.socialmediatoday.com/news/tiktok-joins-international-trademark-association-education-program/758357/' target='_blank'>TikTok Joins INTA Counterfeit Goods Education Initiative</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>TikTok will look to expand its efforts to combat fake product listings.&nbsp;</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
-<a href='https://www.socialmediatoday.com/news/youtube-adds-playlist-comments-fan-badges-brandsintown-listings/758356/' target='_blank' rel='noopener noreferrer'>YouTube Adds Artists Engagement Options to Music</a>
+<a href='https://www.socialmediatoday.com/news/youtube-adds-playlist-comments-fan-badges-brandsintown-listings/758356/' target='_blank'>YouTube Adds Artists Engagement Options to Music</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>Some new additions to mark YouTube Music&#39;s 10th birthday.</div>
 </div>
 <div class='card'>
 <div class='source'>Social Media Today</div>
-<a href='https://www.socialmediatoday.com/news/google-expands-access-ai-mode-adds-ai-search-features/758355/' target='_blank' rel='noopener noreferrer'>Google Expands AI Mode to More Regions</a>
+<a href='https://www.socialmediatoday.com/news/google-expands-access-ai-mode-adds-ai-search-features/758355/' target='_blank'>Google Expands AI Mode to More Regions</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>Google is also rolling out more AI search elements. &nbsp;</div>
 </div>
 <div class='card'>
 <div class='source'>Marketing Dive</div>
-<a href='https://www.marketingdive.com/news/marketing-to-american-soccer-fans-heres-what-the-numbers-say/758338/' target='_blank' rel='noopener noreferrer'>Marketing to American soccer fans: Here’s what the numbers say</a>
+<a href='https://www.marketingdive.com/news/marketing-to-american-soccer-fans-heres-what-the-numbers-say/758338/' target='_blank'>Marketing to American soccer fans: Here’s what the numbers say</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>Approximately 75% of Americans are interested in soccer, with 45% saying their interest is increasing, according to data from The Harris Poll.</div>
 </div>
 <div class='card'>
 <div class='source'>Marketing Dive</div>
-<a href='https://www.marketingdive.com/news/downy-tells-almost-scandalously-soft-stories-for-spotify-campaign/758165/' target='_blank' rel='noopener noreferrer'>Downy tells ‘Almost Scandalously Soft Stories’ for Spotify campaign</a>
+<a href='https://www.marketingdive.com/news/downy-tells-almost-scandalously-soft-stories-for-spotify-campaign/758165/' target='_blank'>Downy tells ‘Almost Scandalously Soft Stories’ for Spotify campaign</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>The P&amp;G brand is&nbsp;tapping into the growing popularity around audiobook romances with four stories that position freshness as a sensorial escape.</div>
 </div>
 <div class='card'>
 <div class='source'>Marketing Dive</div>
-<a href='https://www.marketingdive.com/news/rxbar-hidden-valley-see-marketing-opportunity-in-summer-travel-chaos/758271/' target='_blank' rel='noopener noreferrer'>RXBar, Hidden Valley see marketing opportunity in summer travel chaos</a>
+<a href='https://www.marketingdive.com/news/rxbar-hidden-valley-see-marketing-opportunity-in-summer-travel-chaos/758271/' target='_blank'>RXBar, Hidden Valley see marketing opportunity in summer travel chaos</a>
 <div class='date'>21 Aug 2025</div>
 <div class='summary'>The packaged foods brands are running separate promotions that help cover the costs of flying and canceled trips amid a busy season.&nbsp;</div>
 </div>
 </div>
-<div class='footer'>Updated automatically every week via GitHub Actions · Powered by free marketing sources · <span style='color:#1f2eb8;font-weight:600;'>Created by Rotem Bachar</span></div>
+<div id='entries-ai' class='entries hidden'>
+<div class='card'>
+<div class='source'>Neuroscience News</div>
+<a href='https://neurosciencenews.com/personality-tests-unreliable-29609/' target='_blank'>Personality Tests Like Myers-Briggs Can Mislead More Than Reveal</a>
+<div class='date'>24 Aug 2025</div>
+<div class='summary'>Personality tests like Myers-Briggs promise insight and self-discovery but often fall short of scientific reliability. Their appeal lies in fulfilling our psychological drive for identity and belonging, but many rely on vague descriptions that exploit the Barnum effect—similar to horoscopes.</div>
+</div>
+<div class='card'>
+<div class='source'>Neuroscience News</div>
+<a href='https://neurosciencenews.com/music-learning-memory-emotion-29608/' target='_blank'>Music After Learning Boosts Memory, But Only at the Right Emotion Level</a>
+<div class='date'>24 Aug 2025</div>
+<div class='summary'>A new study reveals that listening to music immediately after an experience can enhance memory—if the emotional response is just right. Researchers found that volunteers who experienced moderate arousal while listening to music were better at recalling details, while those with stronger or weaker emotions remembered only the gist.</div>
+</div>
+<div class='card'>
+<div class='source'>Neuroscience News</div>
+<a href='https://neurosciencenews.com/omega-3-metabolites-sleepiness-29607/' target='_blank'>Omega-3s May Protect Against Daytime Sleepiness</a>
+<div class='date'>24 Aug 2025</div>
+<div class='summary'>A new study has identified seven blood metabolites linked to excessive daytime sleepiness (EDS), a condition affecting one in three Americans. The findings show that both diet and hormones play a role, with omega-3 and omega-6 fatty acids associated with lower risk, and compounds like tyramine linked to higher risk.</div>
+</div>
+<div class='card'>
+<div class='source'>Neuroscience News</div>
+<a href='https://neurosciencenews.com/speech-rhythm-neuroscience-29606/' target='_blank'>Human Speech Follows a Universal Rhythm Every 1.6 Seconds</a>
+<div class='date'>23 Aug 2025</div>
+<div class='summary'>A large cross-linguistic study has revealed that human speech worldwide follows a universal rhythm, with intonation units appearing roughly every 1.6 seconds. These rhythmic chunks structure conversation, helping listeners track meaning, take turns, and absorb information.</div>
+</div>
+<div class='card'>
+<div class='source'>Neuroscience News</div>
+<a href='https://neurosciencenews.com/pain-neuropharmacology-non-addictive-29605/' target='_blank'>New Drug Aims to Block Pain Without Addiction Risks</a>
+<div class='date'>22 Aug 2025</div>
+<div class='summary'>Chronic pain affects millions, but opioid medications bring high risks of dependence and side effects. Researchers have now pinpointed specific neurons in the amygdala that make pain feel unpleasant, opening the door to drugs that ease suffering without shutting down normal sensation.</div>
+</div>
+<div class='card'>
+<div class='source'>Marketing Tech News</div>
+<a href='https://www.marketingtechnews.net/news/online-scam-google-search-ai-overviews-case-study-report/' target='_blank'>Cruising for a bruising: AI Overviews new source of scams</a>
+<div class='date'>18 Aug 2025</div>
+<div class='summary'>A new spin on an old trick is making online scammers richer, with a combination of AI Overviews on Google search pages and a lack of contact information on companies&#8217; websites. As reported in Yahoo!</div>
+</div>
+<div class='card'>
+<div class='source'>Marketing Tech News</div>
+<a href='https://www.marketingtechnews.net/news/alibaba-launches-ai-agent-to-speed-up-online-sourcing-for-merchants/' target='_blank'>Alibaba launches AI agent to speed up online sourcing for merchants</a>
+<div class='date'>15 Aug 2025</div>
+<div class='summary'>Alibaba International has introduced an AI agent for global trade built on its Accio B2B search engine. Called Accio Agent, the new tool comes after Accio passed two million users and shifts the platform from a search-and-sourcing tool into an AI-driven &#8216;trade assistant.&#8217; The release follows research from Alibaba International showing that 40% of small...</div>
+</div>
+<div class='card'>
+<div class='source'>Marketing Tech News</div>
+<a href='https://www.marketingtechnews.net/news/top-6-ai-writing-tools-to-help-you-write-smarter-not-harder/' target='_blank'>Top 6 AI writing tools to help you write smarter, not harder</a>
+<div class='date'>13 Aug 2025</div>
+<div class='summary'>StudyPro &#8211; the tool you&#8217;ll want to keep using StudyPro isn&#8217;t pretending to be a lifestyle assistant, but was built from the ground up for academic essays and research papers. StudyPro has context-aware generation, so doesn&#8217;t insert random facts into a paragraph.</div>
+</div>
+<div class='card'>
+<div class='source'>Marketing Tech News</div>
+<a href='https://www.marketingtechnews.net/news/moving-forward-small-business-and-semrush-announce-mastering-ai-search-for-your-brand-a-free-6-part-virtual-workshop-series-to-empower-businesses-in-the-ai-era/' target='_blank'>Moving Forward Small Business and Semrush announce six-part virtual workshop for businesses in the AI era</a>
+<div class='date'>11 Aug 2025</div>
+<div class='summary'>Moving Forward Small Business (MFSB) has announced a strategic partnership with Semrush, a leading AI-powered marketing platform, to produce &#8220;Mastering AI Search for Your Brand,&#8221; a free, in-depth 6-part virtual workshop series, kicking off on August 6, 2025, and running through September 10, 2025. This collaboration is designed to equip businesses of all sizes –...</div>
+</div>
+<div class='card'>
+<div class='source'>Marketing Tech News</div>
+<a href='https://www.marketingtechnews.net/news/seach-optimisation-for-ai-our-guide-to-best-results/' target='_blank'>Optimising for AI search – a guide</a>
+<div class='date'>08 Aug 2025</div>
+<div class='summary'>4 ways to optimise your website for AI search AI-powered search engines are reinventing the ways users find information online, meaning content creators and website owners need to update SEO strategies to achieve a higher website rankings. The ability to do so, however, is not a walk in the park and requires skill and time....</div>
+</div>
+</div>
+<div class='footer'>Updated automatically every day via GitHub Actions · <span style='color:#1f2eb8;font-weight:600;'>Created by Rotem Bachar</span></div>
+
+<script>
+let current = "marketing";
+document.getElementById("switch-button").addEventListener("click", () => {
+  if (current === "marketing") {
+    document.getElementById("entries-marketing").classList.add("hidden");
+    document.getElementById("entries-ai").classList.remove("hidden");
+    document.getElementById("feed-title").innerText = "AI & Neuromarketing Articles";
+    document.getElementById("switch-button").innerText = "←";
+    current = "ai";
+  } else {
+    document.getElementById("entries-ai").classList.add("hidden");
+    document.getElementById("entries-marketing").classList.remove("hidden");
+    document.getElementById("feed-title").innerText = "Marketing Articles";
+    document.getElementById("switch-button").innerText = "→";
+    current = "marketing";
+  }
+});
+</script>
+    
 </body></html>
