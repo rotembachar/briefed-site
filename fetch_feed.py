@@ -10,6 +10,8 @@ import xml.etree.ElementTree as ET
 import requests
 import re
 from pathlib import Path
+from bs4 import BeautifulSoup
+
 
 AI_KEYWORDS = [
     r"\bai\b", r"\bartificial intelligence\b", r"\bmachine learning\b",
@@ -45,27 +47,57 @@ def summarize_text(text: str, max_sentences: int = 2) -> str:
     return " ".join(sentences[:max_sentences])
 
 
-def fetch_feed_items(feed_url: str, count: int = 5) -> list[dict]:
-    """Fetch ``count`` items from a given RSS feed URL."""
+def fetch_feed_items(source: str, feed_url: str, count: int = 5) -> list[dict]:
+    """Fetch ``count`` items from a given RSS feed URL (or scrape AMA site)."""
     items: list[dict] = []
+
     try:
-        response = requests.get(feed_url, timeout=10)  # ⏱ timeout למניעת תקיעות
-        response.raise_for_status()
-        root = ET.fromstring(response.content)
-        for item in root.findall(".//item")[:count]:
-            title = item.findtext("title", default="")
-            link = item.findtext("link", default="")
-            pub_date = item.findtext("pubDate", default="")
-            description = item.findtext("description", default="")
-            items.append({
-                "title": title,
-                "link": link,
-                "published": pub_date,
-                "description": description,
-            })
+        # מקרה מיוחד: American Marketing Association → Scraping
+        if source == "American Marketing Association":
+            resp = requests.get("https://www.ama.org/marketing-news-home/", timeout=10)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+
+            cards = soup.find_all(class_="card__body")[:count]
+            for card in cards:
+                title_tag = card.find("h2")
+                link_tag = title_tag.find("a") if title_tag else None
+                title = link_tag.get_text(strip=True) if link_tag else ""
+                link = link_tag["href"] if link_tag else ""
+
+                all_ps = card.find_all("p")
+                summary = ""
+                if len(all_ps) > 1:
+                    summary = all_ps[1].get_text(strip=True)
+
+                items.append({
+                    "title": title,
+                    "link": link,
+                    "published": "",  # אין תאריך באתר
+                    "description": summary,
+                })
+
+        else:
+            # שאר האתרים → RSS רגיל
+            response = requests.get(feed_url, timeout=10)
+            response.raise_for_status()
+            root = ET.fromstring(response.content)
+            for item in root.findall(".//item")[:count]:
+                title = item.findtext("title", default="")
+                link = item.findtext("link", default="")
+                pub_date = item.findtext("pubDate", default="")
+                description = item.findtext("description", default="")
+                items.append({
+                    "title": title,
+                    "link": link,
+                    "published": pub_date,
+                    "description": description,
+                })
+
     except Exception as exc:
-        print(f"⚠️ Failed to fetch {feed_url}: {exc}")
+        print(f"⚠️ Failed to fetch {source}: {exc}")
     return items
+
 
 
 def categorize_entry(entry: dict) -> list[str]:
@@ -100,7 +132,7 @@ def process_entries(feed_dict: dict) -> list[dict]:
     """Fetch and summarize all entries from a feed dictionary."""
     entries: list[dict] = []
     for source, url in feed_dict.items():
-        items = fetch_feed_items(url, count=5)
+        items = fetch_feed_items(source, url, count=5)
         for item in items:
             summary = summarize_text(item["description"]) or "No summary available."
             entries.append({
