@@ -81,11 +81,12 @@ def categorize_entry(entry: dict) -> list[str]:
 
     # AI
     if any(re.search(pattern, text) for pattern in AI_KEYWORDS):
-    categories.append("AI")
-
+        categories.append("AI")
+    
     # Research
     if any(re.search(pattern, text) for pattern in RESEARCH_KEYWORDS):
-    categories.append("Research")
+        categories.append("Research")
+
 
 
     # General
