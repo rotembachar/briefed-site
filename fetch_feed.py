@@ -11,6 +11,19 @@ import requests
 import re
 from pathlib import Path
 
+AI_KEYWORDS = [
+    r"\bai\b", r"\bartificial intelligence\b", r"\bmachine learning\b",
+    r"\bgen ai\b", r"\bchatgpt\b", r"\bopenai\b", r"\bdeep learning\b",
+    r"\bneural network\b", r"\bgenerative ai\b", r"\bagent ai\b",
+    r"\bagentic ai\b", r"\bgpt\b"
+]
+
+RESEARCH_KEYWORDS = [
+    r"\bstudy\b", r"\bresearch\b", r"\bsurvey\b", r"\breport\b",
+    r"\bwhitepaper\b", r"\banalysis\b", r"\binsight\b",
+    r"\bacademic\b", r"\binstitute\b", r"\bdata-driven\b"
+]
+
 
 FEEDS = {
     "Marketing Dive": "https://www.marketingdive.com/feeds/news/",
@@ -67,19 +80,13 @@ def categorize_entry(entry: dict) -> list[str]:
         categories.append("Research")
 
     # AI
-    if any(word in text for word in [
-        "ai", "artificial intelligence", "machine learning", "gen ai",
-        "chatgpt", "openai", "deep learning", "neural network",
-        "generative ai", "agent ai", "agentic ai", "agent", "gpt"
-    ]):
-        categories.append("AI")
+    if any(re.search(pattern, text) for pattern in AI_KEYWORDS):
+    categories.append("AI")
 
     # Research
-    if any(word in text for word in [
-        "study", "research", "survey", "report", "whitepaper",
-        "analysis", "insight", "academic", "institute", "data-driven"
-    ]):
-        categories.append("Research")
+    if any(re.search(pattern, text) for pattern in RESEARCH_KEYWORDS):
+    categories.append("Research")
+
 
     # General
     if not categories:
