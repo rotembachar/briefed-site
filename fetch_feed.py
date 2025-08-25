@@ -20,7 +20,6 @@ FEEDS = {
     "Search Engine Journal": "https://www.searchenginejournal.com/category/news/feed/",
     "Marketing Beat": "https://www.marketing-beat.co.uk/feed/",
     "Marketing Tech News": "https://www.marketingtechnews.net/feed/",
-    "Marketing AI Institute": "https://www.marketingaiinstitute.com/blog/rss.xml",
     "American Marketing Association": "https://www.ama.org/feed/",
 }
 
