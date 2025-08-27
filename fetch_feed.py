@@ -192,7 +192,7 @@ def generate_html(all_entries: list[dict], output_path: Path) -> None:
     )
 
     # Header
-    parts.append("<div class='header'><h1>Briefed.</h1><p>Your marketing news in One place</p></div>")
+    parts.append("<div class='header'><h1>Briefed.</h1><p>Your marketing news in one place</p></div>")
 
     # Tabs
     parts.append("<div class='tabs'>")
