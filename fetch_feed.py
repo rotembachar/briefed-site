@@ -101,13 +101,11 @@ def fetch_feed_items(source: str, feed_url: str, count: int = 5) -> list[dict]:
 
 
 def categorize_entry(entry: dict) -> list[str]:
-    """Return a list of categories (AI, B2B, Research, General) for an entry."""
+    """Return a list of categories (AI, Research, General) for an entry."""
     text = (entry["title"] + " " + entry["summary"]).lower()
     categories = []
 
     # חוקים לפי מקור
-    if entry["source"] == "The B2B Marketer":
-        categories.append("B2B")
     if entry["source"] == "American Marketing Association":
         categories.append("Research")
 
@@ -162,7 +160,7 @@ def process_entries(feed_dict: dict) -> list[dict]:
 
 def generate_html(all_entries: list[dict], output_path: Path) -> None:
     """Generate HTML file with tabs for categories."""
-    categories_map = {"AI": [], "B2B": [], "Research": [], "General": []}
+    categories_map = {"AI": [], "Research": [], "General": []}
     for entry in all_entries:
         cats = categorize_entry(entry)
         for c in cats:
